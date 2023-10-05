@@ -18,9 +18,9 @@ app.use(cors());
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/doctor", doctorRoutes);
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./frontend")));
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./frontend/index.html"));
 });
 
 app.use(express.static("frontend"));
